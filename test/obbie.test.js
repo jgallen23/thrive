@@ -60,6 +60,26 @@ suite('obbie', function() {
       assert.equal(bar.fooMethodWasCalled, true);
       
     });
+
+    test('calling super', function() {
+      var Foo = Obbie.extend({
+        fooMethod: function() {
+          this.fooMethodWasCalled = true;
+        }
+      });
+
+      var Bar = Foo.extend({
+        fooMethod: function() {
+          Foo.prototype.fooMethod.call(this);
+        }
+      });
+
+      var bar = new Bar();
+      bar.fooMethod();
+
+      assert.equal(bar.fooMethodWasCalled, true);
+      
+    });
     
   });
   
