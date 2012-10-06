@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <script src="../dist/thrive.js"></script>
+    <script>
+      var AwesomeClass = Thrive.extend({
+        init: function() {
+          console.log('init');
+        },
+        method: function() {
+          console.log(this.option);
+        }
+      }); 
+      var awesome = new AwesomeClass({ option: 123 });
+      awesome.method();
+    </script>
+  </body>
+</html>

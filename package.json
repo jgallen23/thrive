@@ -1,23 +1,26 @@
 {
-  "name": "obbie",
-  "description": "A class library",
+  "name": "thrive",
+  "description": "A base class that gives you event proxy, inheritance and object arguments",
   "homepage": "",
   "author": "Greg Allen <@jgaui> (http://jga.me)",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jgallen23/obbie.git"
+    "url": "https://github.com/jgallen23/thrive.git"
   },
   "dependencies": {
     "aug": "0.0.5",
-    "currie": "0.0.1"
+    "currie": "0.0.2"
   },
   "devDependencies": {
-    "mocha": "*"
+    "mocha": "*",
+    "clientside": "0.1.1"
   },
-  "main": "./lib/obbie.js",
+  "main": "./lib/thrive.js",
+  "keywords": ["class", "oop", "clientside"],
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "build": "clientside -m lib/thrive.js -n Thrive > dist/thrive.js"
   },
   "bin": {
   }
