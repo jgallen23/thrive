@@ -11,11 +11,11 @@ if (typeof __cs == 'undefined') {
     }
   };
 }
-__cs.map['aug'] = 'cs938264'
-__cs.map['currie'] = 'cs894315'
+__cs.map['aug'] = 'cs562956'
+__cs.map['currie'] = 'cs691906'
 
 //aug.js
-__cs.libs.cs938264 = (function(require, module, exports) {
+__cs.libs.cs562956 = (function(require, module, exports) {
 var aug = function __aug() {
   var options, name, src, copy, clone, c,
       deep = false,
@@ -53,7 +53,7 @@ return module.exports || exports;
 })(__cs.r, {}, {});
 
 //currie.js
-__cs.libs.cs894315 = (function(require, module, exports) {
+__cs.libs.cs691906 = (function(require, module, exports) {
 var currie = function(fn, scope) {
   var args = [];
   for (var i=2, len = arguments.length; i < len; ++i) {
@@ -76,25 +76,30 @@ var aug = require('aug');
 var currie = require('currie');
 var init = false;
 var Thrive = function() {}
-Thrive.extend = function extend(obj) {
+Thrive.extend = function extend(obj, statics) {
   init = true;
   var proto = new this();
   init = false;
   aug(proto, obj);
   var Thrive = function(params) {
     aug(this, params);
+    this.Class = Thrive;
     if (!init && this.init) {
       this.init();
     }
   }
   Thrive.prototype = proto;
   Thrive.prototype.constructor = Thrive;
-  Thrive.extend = extend
+  aug(Thrive, this, statics);
  
   return Thrive;
 }
 Thrive.prototype.proxy = function(fn, arg1, arg2, arg3) {
-  return currie(fn, this, arg1, arg2, arg3);
+  var args = [fn, this];
+  for (var i = 1, c = arguments.length; i < c; i++) {
+    args.push(arguments[i]);
+  }
+  return currie.apply(currie, args);
 }
 module.exports = Thrive;
 return module.exports || exports;
