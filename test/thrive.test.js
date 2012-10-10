@@ -1,14 +1,14 @@
 var assert = require('assert')
 
-var Obbie = require('../');
+var Thrive = require('../');
 
-suite('obbie', function() {
+suite('Thrive', function() {
   
 
   suite('#extend', function() {
 
     test('init is called', function() {
-      var Cls = Obbie.extend({
+      var Cls = Thrive.extend({
         init: function() {
           this.initWasCalled = true;
         }
@@ -19,7 +19,7 @@ suite('obbie', function() {
     });
 
     test('pass in params', function() {
-      var Cls = Obbie.extend({});
+      var Cls = Thrive.extend({});
       var ob = new Cls({ test: false, debug: true });
 
       assert.equal(ob.test, false);
@@ -29,11 +29,11 @@ suite('obbie', function() {
 
     test('instanceof', function() {
 
-      var Cls = Obbie.extend({});
+      var Cls = Thrive.extend({});
 
       var c = new Cls();
       assert.equal(c instanceof Cls, true);
-      assert.equal(c instanceof Obbie, true);
+      assert.equal(c instanceof Thrive, true);
     });
 
   });
@@ -42,7 +42,7 @@ suite('obbie', function() {
 
     test('basic inheritance', function() {
 
-      var Foo = Obbie.extend({
+      var Foo = Thrive.extend({
         fooMethod: function() {
           this.fooMethodWasCalled = true;
         }
@@ -62,7 +62,7 @@ suite('obbie', function() {
     });
 
     test('calling super', function() {
-      var Foo = Obbie.extend({
+      var Foo = Thrive.extend({
         fooMethod: function() {
           this.fooMethodWasCalled = true;
         }
@@ -83,13 +83,13 @@ suite('obbie', function() {
     
   });
   
-  suite('extending Obbie', function() {
+  suite('extending Thrive', function() {
 
     test('adding to prototype', function() {
-      Obbie.prototype.testMe = function() {
+      Thrive.prototype.testMe = function() {
         this.testMeWasCalled = true;
       }
-      var Foo = Obbie.extend({});
+      var Foo = Thrive.extend({});
       var foo = new Foo();
       foo.testMe();
       assert.equal(foo.testMeWasCalled, true);
@@ -101,7 +101,7 @@ suite('obbie', function() {
   suite('#proxy', function() {
     test('maintain scope', function(done) {
 
-      var Foo = Obbie.extend({
+      var Foo = Thrive.extend({
         init: function() {
           setTimeout(this.proxy(this.method, 1, 2, 3), 10);
         },
