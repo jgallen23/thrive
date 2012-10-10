@@ -117,6 +117,54 @@ suite('Thrive', function() {
     });
 
   });
+
+  suite('statics', function() {
+
+    test('able to define statics on a class', function() {
+
+      var Foo = Thrive.extend({
+        //instance methods
+        init: function() {
+
+        },
+        method: function() {
+        }
+      }, {
+        //statics
+        staticMethod: function() {
+        }
+      });
+
+      var foo = new Foo();
+
+      assert.equal(typeof Foo.staticMethod, 'function');
+      assert.equal(foo.Class, Foo);
+    });
+
+    test('inheritance keeps statics', function() {
+      
+      var Foo = Thrive.extend({
+        //instance methods
+        init: function() {
+
+        },
+        method: function() {
+        }
+      }, {
+        //statics
+        staticMethod: function() {
+        }
+      });
+
+      var Bar = Foo.extend({
+      });
+
+      var bar = new Bar();
+      assert.equal(typeof Bar.staticMethod, 'function');
+      assert.equal(bar.Class, Bar);
+    });
+
+  });
   
 });
 
