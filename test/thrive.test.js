@@ -164,6 +164,28 @@ suite('Thrive', function() {
       assert.equal(bar.Class, Bar);
     });
 
+    test('other classes don\'t have statics conflict', function() {
+
+      var Foo = Thrive.extend({
+      }, {
+        staticMethod: function() {}
+      });
+
+      var Boo = Thrive.extend({
+      }, {
+        staticMethod2: function() {}
+      });
+
+      var foo = new Foo();
+      var boo = new Boo();
+
+      assert.equal(typeof Foo.staticMethod, 'function');
+      assert.equal(typeof Foo.staticMethod2, 'undefined');
+      assert.equal(typeof Boo.staticMethod, 'undefined');
+      assert.equal(typeof Boo.staticMethod2, 'function');
+      
+    });
+
   });
   
 });

@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "aug": "0.0.5",
-    "currie": "0.0.2"
+    "currie": "0.0.2",
+    "subs": "0.0.3"
   },
   "devDependencies": {
     "mocha": "*",
-    "clientside": "0.1.1"
+    "clientside": "0.1.1",
+    "sinon": "*"
   },
   "main": "./lib/thrive.js",
   "keywords": ["class", "oop", "clientside"],
