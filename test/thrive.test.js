@@ -186,7 +186,45 @@ suite('Thrive', function() {
       
     });
 
+    test('if init function exists, call it', function() {
+
+      var called = false;
+      var Foo = Thrive.extend({
+      }, {
+        init: function() {
+          called = true;
+        }
+      });
+
+      assert.equal(called, true);
+
+      
+    });
+
   });
+
+  suite('mixin', function() {
+
+    test('add methods to prototype', function() {
+      var mixin = {
+        someMethod: function() {
+          return true;
+        }
+      }
+      var Foo = Thrive.extend({
+
+      });
+
+      var foo = new Foo();
+      Foo.mixin(mixin);
+
+      assert.equal(typeof foo.someMethod, 'function');
+      assert.equal(foo.someMethod(), true);
+      
+    });
+    
+  });
+  
   
 });
 
