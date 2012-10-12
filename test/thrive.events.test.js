@@ -1,6 +1,7 @@
 var assert = require('assert');
 var Thrive = require('../');
 var sinon = require('sinon');
+var Subs = require('subs');
 
 
 suite('Thrive', function() {
@@ -14,10 +15,13 @@ suite('Thrive', function() {
 
     suite('instance', function() {
       
-      test('Thrive instances should have on and emit', function() {
+      test('Thrive instances should inherit everything from Subs', function() {
         var t = new Cls();
-        assert.equal(typeof t.on, 'function');
-        assert.equal(typeof t.emit, 'function');
+
+        for (var prop in Subs.prototype) {
+          assert.equal(typeof t[prop], 'function');
+        }
+
       });
 
       test('should emit events', function() {

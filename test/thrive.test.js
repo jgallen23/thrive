@@ -201,6 +201,16 @@ suite('Thrive', function() {
       
     });
 
+    test('don\'t extend everything off of Thrive', function() {
+      Thrive.View = {};
+
+      var Foo = Thrive.extend({
+
+      });
+
+      assert.equal(typeof Foo.View, 'undefined');
+    });
+
   });
 
   suite('mixin', function() {
