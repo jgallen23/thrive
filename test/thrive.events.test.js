@@ -72,6 +72,30 @@ suite('Thrive', function() {
       
     });
     
+    suite('global', function() {
+      test('Thrive static should have on and emit', function() {
+        assert.equal(typeof Thrive.on, 'function');
+        assert.equal(typeof Thrive.emit, 'function');
+      });
+
+      test('should emit events', function() {
+        var spy = sinon.spy();
+        Thrive.on('test', spy);
+        Thrive.emit('test');
+        assert.ok(spy.called);
+      });
+
+      test('instance events should only trigger on those instances', function() {
+        var Cls = Thrive.extend();
+        var spy = sinon.spy();
+
+        Cls.on('test', spy);
+        Thrive.emit('test');
+
+        assert.equal(spy.called, false)
+      });
+
+    });
     
     
   });
