@@ -26,9 +26,5 @@
     "oop",
     "clientside"
   ],
-  "scripts": {
-    "test": "mocha",
-    "build": "clientside -m lib/thrive.js -n Thrive > dist/thrive.js"
-  },
   "bin": {}
 }
