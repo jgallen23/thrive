@@ -1,6 +1,6 @@
 /*!
  * thrive - A base class that gives you event proxy, inheritance and object arguments
- * v0.0.2
+ * v0.1.0
  * https://github.com/jgallen23/thrive
  * copyright JGA 2012
  * MIT License
