@@ -4,26 +4,31 @@
   "homepage": "https://github.com/jgallen23/thrive",
   "author": "Greg Allen <@jgaui> (http://jga.me)",
   "version": "0.0.2",
+  "license": "MIT",
+  "copyright": "JGA",
   "repository": {
     "type": "git",
     "url": "git://github.com/jgallen23/thrive.git"
   },
   "dependencies": {
     "aug": "0.0.5",
-    "currie": "0.0.2",
-    "subs": "0.0.3"
+    "currie": "0.1.0"
   },
   "devDependencies": {
-    "mocha": "*",
-    "clientside": "0.1.1",
-    "sinon": "*"
+    "mocha": "~1.6.0",
+    "grunt-simple-mocha": "~0.2.0",
+    "grunt-clientside": "~0.2.0",
+    "grunt": "~0.3.17"
   },
   "main": "./lib/thrive.js",
-  "keywords": ["class", "oop", "clientside"],
+  "keywords": [
+    "class",
+    "oop",
+    "clientside"
+  ],
   "scripts": {
     "test": "mocha",
     "build": "clientside -m lib/thrive.js -n Thrive > dist/thrive.js"
   },
-  "bin": {
-  }
+  "bin": {}
 }
