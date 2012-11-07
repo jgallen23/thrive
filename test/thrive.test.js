@@ -1,4 +1,4 @@
-var assert = require('assert')
+var assert = require('assert');
 
 var Thrive = require('../');
 
@@ -88,7 +88,7 @@ suite('Thrive', function() {
     test('adding to prototype', function() {
       Thrive.prototype.testMe = function() {
         this.testMeWasCalled = true;
-      }
+      };
       var Foo = Thrive.extend({});
       var foo = new Foo();
       foo.testMe();
@@ -197,8 +197,6 @@ suite('Thrive', function() {
       });
 
       assert.equal(called, true);
-
-      
     });
 
     test('don\'t extend everything off of Thrive', function() {
@@ -209,6 +207,7 @@ suite('Thrive', function() {
       });
 
       assert.equal(typeof Foo.View, 'undefined');
+      assert.equal(typeof Foo._root, 'undefined');
     });
 
   });
@@ -220,7 +219,7 @@ suite('Thrive', function() {
         someMethod: function() {
           return true;
         }
-      }
+      };
       var Foo = Thrive.extend({
 
       });

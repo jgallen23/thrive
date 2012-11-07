@@ -6,6 +6,7 @@
   <body>
     <script src="../dist/thrive.js"></script>
     <script>
+      Thrive.test = function() {};
       var AwesomeClass = Thrive.extend({
         init: function() {
           console.log('init');
@@ -13,9 +14,15 @@
         method: function() {
           console.log(this.option);
         }
+      }, {
+        staticMethod: function() {}
       }); 
       var awesome = new AwesomeClass({ option: 123 });
       awesome.method();
+      var SubClass = AwesomeClass.extend({
+      });
+      console.log(AwesomeClass.test, AwesomeClass.staticMethod);
+      console.log(SubClass.test, SubClass.staticMethod);
     </script>
   </body>
 </html>
