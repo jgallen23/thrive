@@ -1,6 +1,9 @@
-var assert = require('assert');
-
-var Thrive = require('../');
+if (typeof window === 'undefined') {
+  var assert = require('assert');
+  var Thrive = require('../');
+} else {
+  var assert = chai.assert;
+}
 
 suite('Thrive', function() {
   

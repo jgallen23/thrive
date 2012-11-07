@@ -1,28 +1,20 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-  <head>
-    <title></title>
-  </head>
-  <body>
-    <script src="../dist/thrive.js"></script>
-    <script>
-      Thrive.test = function() {};
-      var AwesomeClass = Thrive.extend({
-        init: function() {
-          console.log('init');
-        },
-        method: function() {
-          console.log(this.option);
-        }
-      }, {
-        staticMethod: function() {}
-      }); 
-      var awesome = new AwesomeClass({ option: 123 });
-      awesome.method();
-      var SubClass = AwesomeClass.extend({
-      });
-      console.log(AwesomeClass.test, AwesomeClass.staticMethod);
-      console.log(SubClass.test, SubClass.staticMethod);
-    </script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
+  <script src="../node_modules/chai/chai.js"></script>
+  <script src="../node_modules/mocha/mocha.js"></script>
+</head>
+<body>
+  <div id="mocha"></div>
+  <script>mocha.setup('tdd')</script>
+  <!--<script src="../lib/routie.js"></script>-->
+  <script src="../dist/thrive.js"></script>
+  <script src="thrive.test.js"></script>
+  <script>
+    mocha.run()
+  </script>
+</body>
 </html>
