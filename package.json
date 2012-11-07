@@ -3,7 +3,7 @@
   "description": "A base class that gives you event proxy, inheritance and object arguments",
   "homepage": "https://github.com/jgallen23/thrive",
   "author": "Greg Allen <@jgaui> (http://jga.me)",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "license": "MIT",
   "copyright": "JGA",
   "repository": {

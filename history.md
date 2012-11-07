@@ -1,4 +1,19 @@
 
+0.1.0 / 2012-11-07 
+==================
+
+  * browser tests
+  * dist
+  * removed package.json scripts
+  * removed events
+  * added grunt
+  * fixed init
+  * added tests for global eventS
+  * only expose certain static props
+  * mixin support, call init on static
+  * added Subs support for custom pub/sub events for each instance
+  * added ability to overwrite constructor function
+
 0.0.2 / 2012-10-10 
 ==================
 
