@@ -1,0 +1,6 @@
+{
+  "name": "thrive",
+  "description": "A base class that gives you event proxy, inheritance and object arguments",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jgallen23/thrive"
+}

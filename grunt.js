@@ -11,7 +11,7 @@ module.exports = function(grunt) {
               '*/'
     },
     lint: {
-      all: ['grunt.js', 'lib/*.js', 'test/*.test.js']
+      all: ['grunt.js', 'package.json', 'component.json', 'lib/*.js', 'test/*.test.js']
     },
     clientside: {
       main: {
